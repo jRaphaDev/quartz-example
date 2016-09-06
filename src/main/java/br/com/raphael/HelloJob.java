@@ -8,8 +8,10 @@ import org.quartz.JobExecutionException;
 
 public class HelloJob implements Job {
 	
+	@SuppressWarnings("deprecation")
 	public void execute(JobExecutionContext context) throws JobExecutionException {
-		System.out.println("Rapha testando Quartz! " + new Date().toString());	
+		//executa a tarefa.
+		System.out.println("Rapha testando Quartz! " + new Date().getSeconds() + "s");	
 	}
 	
 }

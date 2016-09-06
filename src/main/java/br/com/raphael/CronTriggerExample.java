@@ -8,16 +8,16 @@ import org.quartz.impl.StdSchedulerFactory;
 public class CronTriggerExample {
 	
     public static void main( String[] args ) throws Exception {
-    	
+
     	JobDetail job = new JobDetail();
-    	job.setName("dummyJobName");
+    	job.setName("jobName");
     	job.setJobClass(HelloJob.class);
-    	    	
+
     	CronTrigger trigger = new CronTrigger();
-    	trigger.setName("dummyTriggerName");
-    	//aqui eu seto 10s para executar o job
+    	trigger.setName("triggerName");
+    	//aqui eu defino 10s para executar o job.
     	trigger.setCronExpression("0/10 * * * * ?");
-    	
+
     	//Agendamento
     	Scheduler scheduler = new StdSchedulerFactory().getScheduler();
     	scheduler.start();
